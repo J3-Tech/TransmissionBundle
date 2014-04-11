@@ -21,9 +21,8 @@ class TransmissionExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-        $container->setParameter('transmission.class', 'Transmission\Bundle\TransmissionBundle\Service\TransmissionService');
-        $container->setParameter('my_mailer.transport', 'sendmail');
-
+        $class='Transmission\Bundle\TransmissionBundle\Service\TransmissionService';
+        $container->setParameter('transmission.class',$class);
         $container->setDefinition('transmission', new Definition(
             '%transmission.class%',
             array($config['host'],$config['port'])
