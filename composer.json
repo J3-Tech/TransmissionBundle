@@ -1,0 +1,23 @@
+{
+    "name": "chellem/transmission-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony TransmissionBundle",
+    "keywords": ["Transmission", "PHP Torrent Client"],
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Dickriven Chellemboyee",
+            "email": "jchellem@gmail.com"
+        },
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.2",
+        "kleiram/transmission-php": "dev-master",
+    },
+    "autoload": {
+        "psr-0": { "Transmission\\Bundle\\TransmissionBundle": "" }
+    },
+    "target-dir": "Transmission/Bundle/TransmissionBundle",
+    "minimum-stability": "dev",
+}
