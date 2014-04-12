@@ -19,5 +19,5 @@
         "psr-0": { "Transmission\\Bundle\\TransmissionBundle": "" }
     },
     "target-dir": "Transmission/Bundle/TransmissionBundle",
-    "minimum-stability": "dev",
+    "minimum-stability": "dev"
 }
