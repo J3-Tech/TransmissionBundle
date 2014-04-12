@@ -25,7 +25,7 @@ class TransmissionExtension extends Extension
         $container->setParameter('transmission.class',$class);
         $container->setDefinition('transmission', new Definition(
             '%transmission.class%',
-            array($config['host'],$config['port'])
+            array($config['host'],$config['port'],$config['username'],$config['password'])
         ));
     }
 }
