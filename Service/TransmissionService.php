@@ -23,7 +23,8 @@ class TransmissionService
     public function __call($method,$args)
     {
         if (method_exists($this->transmission,$method)) {
-            return $this->transmission->$method($args);
+
+            return call_user_func_array(array($this->transmission,$method),$args);
         }
     }
 }
