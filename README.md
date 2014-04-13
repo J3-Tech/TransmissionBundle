@@ -24,7 +24,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new new Transmission\Bundle\TransmissionBundle\TransmissionBundle(),
+        new Transmission\Bundle\TransmissionBundle\TransmissionBundle(),
     );
     // ...
 }
