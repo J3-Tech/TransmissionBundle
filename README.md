@@ -1,5 +1,7 @@
 # TransmissionBundle
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/77fcc833-47bc-45c3-aaaf-1662a74f309d/mini.png)](https://insight.sensiolabs.com/projects/77fcc833-47bc-45c3-aaaf-1662a74f309d)
+
 ## Installation
 
 using [Composer](https://getcomposer.org):
