@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="transmission.path" />
+        <parameter key="transmission.username" />
+        <parameter key="transmission.password" />
+        <parameter key="transmission.port">9091</parameter>
+        <parameter key="transmission.host">localhost</parameter>
+        <parameter key="transmission.class">Transmission\Transmission</parameter>
+        <parameter key="transmission.client.class">Transmission\Client</parameter>
+    </parameters>
+
+    <services>
+        <service id="transmission.client" class="%transmission.client.class" public="false">
+            <argument>%transmission.username%</argument>
+            <argument>%transmission.password%</argument>
+        </service>
+
+        <service id="transmission" class="%transmission.class%">
+            <argument>%transmission.host%</argument>
+            <argument>%transmission.port%</argument>
+            <argument>%transmission.path%</argument>
+            <call method="setClient">
+                <argument type="service" id="%transmission.client%" />
+            </call>
+        </service>
+    </services>
+</container>
