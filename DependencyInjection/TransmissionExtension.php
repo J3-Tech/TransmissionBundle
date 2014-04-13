@@ -2,9 +2,10 @@
 
 namespace Transmission\Bundle\TransmissionBundle\DependencyInjection;
 
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Component\DependencyInjection\Definition;
 
 /**
  * This is the class that loads and manages your bundle configuration
@@ -20,11 +21,14 @@ class TransmissionExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-        $class='Transmission\Bundle\TransmissionBundle\Service\TransmissionService';
-        $container->setParameter('transmission.class',$class);
-        $container->setDefinition('transmission', new Definition(
-            '%transmission.class%',
-            array($config['host'],$config['port'],$config['username'],$config['password'])
-        ));
+
+        $container->setParameter('transmission.host', $config['host']);
+        $container->setParameter('transmission.port', $config['port']);
+        $container->setParameter('transmission.path', $config['path']);
+        $container->setParameter('transmission.username', $config['username']);
+        $container->setParameter('transmission.password', $config['password']);
+
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.xml');
     }
 }

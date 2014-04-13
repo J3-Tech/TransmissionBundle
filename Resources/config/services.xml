@@ -9,6 +9,7 @@
         <parameter key="transmission.password" />
         <parameter key="transmission.port">9091</parameter>
         <parameter key="transmission.host">localhost</parameter>
+
         <parameter key="transmission.class">Transmission\Transmission</parameter>
         <parameter key="transmission.client.class">Transmission\Client</parameter>
     </parameters>
