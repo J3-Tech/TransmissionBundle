@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Symfony TransmissionBundle",
     "keywords": ["Transmission", "PHP Torrent Client"],
-    "license": "GPL",
+    "license": "GPL-1.0+",
     "authors": [
         {
             "name": "Dickriven Chellemboyee",
