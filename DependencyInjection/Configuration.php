@@ -18,14 +18,17 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
+
         $rootNode = $treeBuilder->root('transmission');
         $rootNode
             ->children()
-            ->scalarNode('host')->defaultValue('127.0.0.1')->end()
-            ->scalarNode('port')->defaultValue('9091')->end()
-            ->scalarNode('username')->defaultValue(null)->end()
-            ->scalarNode('password')->defaultValue(null)->end()
-            ->end();
+                ->scalarNode('host')->defaultValue('127.0.0.1')->end()
+                ->scalarNode('port')->defaultValue('9091')->end()
+                ->scalarNode('path')->defaultValue(null)->end()
+                ->scalarNode('username')->defaultValue(null)->end()
+                ->scalarNode('password')->defaultValue(null)->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }
