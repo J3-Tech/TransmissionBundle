@@ -25,7 +25,7 @@
             <argument>%transmission.port%</argument>
             <argument>%transmission.path%</argument>
             <call method="setClient">
-                <argument type="service" id="%transmission.client%" />
+                <argument type="service" id="transmission.client" />
             </call>
         </service>
     </services>
