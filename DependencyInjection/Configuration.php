@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('transmission');
         $rootNode
             ->children()
-                ->scalarNode('host')->defaultValue('127.0.0.1')->end()
+                ->scalarNode('host')->defaultValue('localhost')->end()
                 ->scalarNode('port')->defaultValue('9091')->end()
                 ->scalarNode('path')->defaultValue(null)->end()
                 ->scalarNode('username')->defaultValue(null)->end()
