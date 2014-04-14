@@ -15,7 +15,7 @@
     </parameters>
 
     <services>
-        <service id="transmission.client" class="%transmission.client.class" public="false">
+        <service id="transmission.client" class="%transmission.client.class%" public="false">
             <argument>%transmission.username%</argument>
             <argument>%transmission.password%</argument>
         </service>
