@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Transmission Bundle by chellem</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Transmission Bundle</h1>
+        <h2>Symfony Bundle for Transmission API client</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/chellem/TransmissionBundle/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/chellem/TransmissionBundle/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/chellem/TransmissionBundle" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="transmissionbundle" class="anchor" href="#transmissionbundle"><span class="octicon octicon-link"></span></a>TransmissionBundle</h1>
+
+<p><a href="https://travis-ci.org/chellem/TransmissionBundle"><img src="https://travis-ci.org/chellem/TransmissionBundle.svg?branch=master" alt="Build Status"></a> <a href="https://scrutinizer-ci.com/g/chellem/TransmissionBundle/"><img src="https://scrutinizer-ci.com/g/chellem/TransmissionBundle/badges/quality-score.png?s=85b850e0b18417ea5ac5237548c48ba63bb0a7cd" alt="Scrutinizer Code Quality"></a> <a href="https://insight.sensiolabs.com/projects/77fcc833-47bc-45c3-aaaf-1662a74f309d"><img src="https://insight.sensiolabs.com/projects/77fcc833-47bc-45c3-aaaf-1662a74f309d/mini.png" alt="SensioLabsInsight"></a></p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>using <a href="https://getcomposer.org">Composer</a>:</p>
+
+<div class="highlight highlight-json"><pre><span class="p">{</span>
+    <span class="nt">"require"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"chellem/transmission-bundle"</span><span class="p">:</span> <span class="s2">"dev-master"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>CONFIGURATION</h2>
+
+<p>Register the bundle:</p>
+
+<div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="c1">// app/AppKernel.php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">registerBundles</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$bundles</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="c1">// ...</span>
+        <span class="k">new</span> <span class="nx">Transmission\Bundle\TransmissionBundle\TransmissionBundle</span><span class="p">(),</span>
+    <span class="p">);</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Configuration in your config.yml:</p>
+
+<div class="highlight highlight-yaml"><pre><span class="c1"># app/config/config.yml</span>
+<span class="l-Scalar-Plain">transmission</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">~</span>
+</pre></div>
+
+<p>By default:
+    host: 127.0.0.1
+    port: 9091
+    username: null
+    password: null</p>
+
+<p>Full Configuration:</p>
+
+<div class="highlight highlight-yaml"><pre><span class="c1"># app/config/config.yml</span>
+<span class="l-Scalar-Plain">transmission</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">localhost</span>
+    <span class="l-Scalar-Plain">port</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">9091</span>
+    <span class="l-Scalar-Plain">username</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">null</span>
+    <span class="l-Scalar-Plain">password</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">null</span>
+</pre></div>
+
+<h2>
+<a name="usage-as-service" class="anchor" href="#usage-as-service"><span class="octicon octicon-link"></span></a>Usage as service</h2>
+
+<div class="highlight highlight-php"><pre><span class="c1">// ...</span>
+<span class="nv">$transmission</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">container</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'transmission'</span><span class="p">);</span>
+<span class="nv">$torrents</span> <span class="o">=</span> <span class="nv">$transmission</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">();</span>
+<span class="nv">$torrent</span>  <span class="o">=</span> <span class="nv">$transmission</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">// ...</span>
+</pre></div>
+
+<p>You can use any other methods available through <a href="https://github.com/kleiram/transmission-php">transmission-php</a></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
