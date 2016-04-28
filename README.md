@@ -1,5 +1,7 @@
 # TransmissionBundle
 
+[![Join the chat at https://gitter.im/labzone/TransmissionBundle](https://badges.gitter.im/labzone/TransmissionBundle.svg)](https://gitter.im/labzone/TransmissionBundle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/chellem/TransmissionBundle.svg?branch=master)](https://travis-ci.org/chellem/TransmissionBundle) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chellem/TransmissionBundle/badges/quality-score.png?s=85b850e0b18417ea5ac5237548c48ba63bb0a7cd)](https://scrutinizer-ci.com/g/chellem/TransmissionBundle/) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/77fcc833-47bc-45c3-aaaf-1662a74f309d/mini.png)](https://insight.sensiolabs.com/projects/77fcc833-47bc-45c3-aaaf-1662a74f309d)
 
 ## Installation
