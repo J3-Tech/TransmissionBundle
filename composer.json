@@ -6,8 +6,9 @@
     "license": "GPL-1.0+",
     "authors": [
         {
-            "name": "Dickriven Chellemboyee",
-            "email": "jchellem@gmail.com"
+            "name": " Dickriven Chellemboyee",
+            "email": "chellem.void@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
